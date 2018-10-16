@@ -80,6 +80,15 @@ translates them to amino acids, and prints all of them to one output file.
   - The name of any arguments that you provide in the parentheses can be accessed with that variable name inside the function.
   - The part in the quotes is known as the docstring. It documents what your function does. Running `help(myNewFunc)` then allows anyone to see what your function is about.
   - Each function can contain as many lines of code as you want/need, as long as they are all indented by the same amount.
+  - Many functions end with `return` statements. The point of the return statement is to make the value of a variable available to be saved or manipulated. Return statements, when included, are always the last line in a function definition. Here's an example:
+        def factorial(num):
+            product = 1
+            while (num > 0):
+                product = product * num
+                num = num - 1
+            return product
+
+        myNum = factorial(5)
 
 
 ## References
