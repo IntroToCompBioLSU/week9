@@ -74,7 +74,7 @@ translates them to amino acids, and prints all of them to one output file.
   - As our scripts become more complicated it will become increasingly important to start "packaging" commands together. This will make our scripts more readable and our code more reusable.
   - The basic syntax for defining a function is really simple:
         def myNewFunc(anArgument):
-        """Explain here what your function does"""
+            """Explain here what your function does"""
             print(anArgument)
   - The keyword `def` tells Python that you are creating a new function.
   - The name of any arguments that you provide in the parentheses can be accessed with that variable name inside the function.
