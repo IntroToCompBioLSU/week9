@@ -6,7 +6,7 @@
   - No need to create new branches from here on out
 - Final Projects
 
-## Reading and Other Resources
+## Reading
 - Practical Computing, Chapters 10 and 11
 
 
@@ -90,7 +90,49 @@ translates them to amino acids, and prints all of them to one output file.
 
         myNum = factorial(5)
 
+- [ ] Introduction to Plotting
+  - We will use the `matplotlib` library for plotting graphs and figures in Python
+  - You will need to install this library on your VM before you can load it. To install on Ubuntu, type `sudo apt-get install python3-matplotlib`.
+  - We will start by using one part of the `matplotlib` library - `pyplot`. To import one part of a libary, you can use an import statement like this: `from matplotlib import pyplot`
+  - If you want to use a different "nickname" for a library, you can indicate the name you want to use when you run the import command - `import matplotlib.pyplot as plt`
+  - Whenever you use `as` in an import statement, you will be providing an alternative name to access the functions in that library.
+  - To create a simple line plot based on two numerical vectors, you can use these commands:
+        plt.plot([1,2,3,4],[66,67,68,69])
+        plt.show()
+
+- [ ] Introducing the `numpy` library
+  - `numpy` is a powerful library for Python that incorporates sophisticated mathematical tools
+  - Today, we are going to use `numpy` to draw numbers for a probability distribution
+  - While we can draw some random numbers from simple distributions (like a uniform or Normal) using the built-in `random` library, we often might to draw from other distributions
+  - In just a moment, we will need to draw from a Poisson distribution. This is a probability distribution that is confined to integers greater than or equal to 0. It is often used to model the number of events that occur in time or space, when these events are independent and have a fixed probability.
+  - [More on the Poisson can be found here](https://en.wikipedia.org/wiki/Poisson_distribution).
+  - Specifically, the function to draw from this distribution is `numpy.random.poisson()`
+  - For now, let's import just the submodule called `numpy.random` and to avoid having to write the full name out every time, let's give it a nickname - `import numpy.random as nr`. We can then call the Poisson function as `nr.poisson()`.
+  - `numpy` might already be on your system after you install `matplotlib`, but if not you should be able to install it using this Terminal command: `sudo apt-get install python-numpy`.
+
+
+- [ ] Outlining a program with pseudocode
+  - You now have a lot of tools at your disposal to tackle various challenges in Python.
+  - Perhaps the most important skill you can now practice is how to think through solving a problem with code.
+  - There's no single correct way to do this, but a general strategy that's often used is to write out pseudocode.
+  - Basically, think through all the steps that you'll need, but don't worry at all about the language syntax.
+  - What I like to do is open up a file like I'm about to write a script, but then start by just writing all the steps as a series of comments.
+  - After you've worked out what you want to happen, you can fill in the commands below the comments.
+  - To practice this, I want you to now write out pseudocode to conduct a simulation of population growth.
+  - Your simulation should involve starting with some number of individuals.
+  - Each of those individuals should have the same capacity for reproduction, but they will vary (randomly) in how many offspring they produce. This is where the Poisson distribution comes in.
+  - The resources available to this population are limited, though, so it can't go above a certain size, known as the carrying capacity.
+  - Simulate reproduction and population size changes for some number of generations. This number should be able to be easily changed by changing the value of a variable.
+  - Write out in `# comments` how you plan to conduct this simulation.
+
+
+## Weekly Assignment (Due Tuesday, Oct. 23rd)
+- Write out the actual code for the simulation.
+- Run it several times, with different starting population sizes, carrying capacities, and numbers of generations.
+- Write a short summary of what happens
+
 
 ## References
 - [Python File Objects](https://docs.python.org/2.4/lib/bltin-file-objects.html)
 - [Python Docstring Conventions](https://www.python.org/dev/peps/pep-0257/)
+- [Pyplot Tutorial](https://matplotlib.org/tutorials/introductory/pyplot.html#sphx-glr-tutorials-introductory-pyplot-py)
