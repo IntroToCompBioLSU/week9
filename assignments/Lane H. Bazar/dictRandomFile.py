@@ -7,7 +7,7 @@ with open(sys.argv[1], 'r') as f:
     contents = contents.strip()
 print (contents)
 
-# let user choose an option 
+# let user choose an option. 
 # 1 translate a protein-coding nucleotide sequence to amino acids
 # 2 randomly draw a codon from the squence
 
