@@ -14,7 +14,7 @@ def sum(listOfInts):
     total = 0
     for myInt in listOfInts:
         total = total + myInt
-    return total  # The return statement "returns" a variable 
+    return total  # The return statement "returns" a variable
                   # so the value can be saved or printed
 
 print(sum(nums))
