@@ -4,7 +4,7 @@ import numpy
 import numpy.random as NumRan
 import matplotlib.pyplot as plot
 #choose random offspring rate
-Rate= NumRan.poisson()
+Rate= NumRan.poisson(2.0)
 #set max pop size
 MaxPop= input("Enter the Max Population: ")
 #Number of generations to run
