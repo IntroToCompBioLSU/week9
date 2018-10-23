@@ -25,7 +25,6 @@ plot.plot(range(Gens+1),num, "--")
 plot.xlabel("Generation")
 plot.ylabel("Number")
 plot.title("Growth rate: %s, Carrying Capacity =%d" % (Rate, MaxPop))
-plot.axvline(numpy.argmax(numpy.diff(num)), color = "c")
 plot.show()
 
 #the growth rate rarely goes above 1 in the simulation. When I try to enter Numpy.random.poisson(2, 10) it gives me:
