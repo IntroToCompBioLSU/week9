@@ -2,8 +2,10 @@
 
 import numpy as np
 
-#establish a variable for initial population size.
+#establish a system for population to predict offspring per individual at rando$
 
+
+#establish a variable for initial population size.
 #currentPop = input("Type the starting population of indiviuduals: ")
 currentPopulation = int(input("Initial population size: "))
 
@@ -20,7 +22,7 @@ meanOffspring = 1
 
 # loop generation count times
 for i in range(0, generationCount):
-# {
+
 	#show currentPopulation
 	print (currentPopulation)
 
@@ -38,15 +40,3 @@ for i in range(0, generationCount):
 
 	# currentPop <- carryingCapacity
 		currentPopulation = carryingCapacity
-	#}
-	
-#}
-
-
-#pop = np.ones(p) + np.random.uniform(-0.5,0.5,p)
-
-#establish a system for population to predict offspring per individual at random.
-
-#establish the number of generations in the experiment.
-
-#Define the carrying capacity.
