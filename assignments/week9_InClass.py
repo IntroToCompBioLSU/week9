@@ -24,17 +24,17 @@ user_input = sys.argv[1:]
 for filename in user_input:
         with open(filename, 'r') as myfile:
                 myLine = myfile.read()
-        l.append(str(myLine))
+        l.append(myLine)
 dnaSeq = ''.join(l)
 dnaSeq = dnaSeq.upper()
 rnaSeq = dnaSeq.replace("T","U")
-#count = 0
-#rnaList = []
-#for i in range(len(rnaSeq)):
-#	if rnaSeq[count] != '\n':
-#		rnaList[count].append(rnaSeq(count))
-#count = count + 1
-#print (rnaList[0])
+count = 0
+rnaList = []
+for i in range(len(rnaSeq)):
+	if rnaSeq[count] != '\n':
+		rnaList.append(rnaSeq[count])
+count = count + 1
+print (rnaList[0])
 print("DNA sequences transcribed: %s" %rnaSeq)
 #Converts the RNA sequence to amino acids.
 proteinSeq = ""
