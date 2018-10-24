@@ -5,7 +5,7 @@ Codon2AA = {"AAA":"Lysine ", "AAC":"Asparagine ", "AAG":"Lysine ", "AAU":"Aspara
 "ACA":"Threonine ", "ACC":"Threonine ", "ACG":"Threonine ", "ACU":"Threonine ",
 "AGA":"Arginine ", "AGC":"Serine ", "AGG":"Arginine ", "AGU":"Serine ",
 "AUA":"Isoleucine ", "AUC":"Isoleucine ", "AUG":"Methionine ", "AUU":"Isoleucine ",
-"CAA":"Glutamine ", "CAC":"Hisdadine ", "CAG":"Glutamine ", "CAU":"Hisdadine ",
+"CAA":"Glutamine ", "CAC":"Histadine ", "CAG":"Glutamine ", "CAU":"Histadine ",
 "CCA":"Proline ", "CCC":"Proline ", "CCG":"Proline ", "CCU":"Proline ",
 "CGA":"Arginine ", "CGC":"Arginine ", "CGG":"Arginine ", "CGU":"Arginine ",
 "CUA":"Leucine ", "CUC":"Leucine ", "CUG":"Leucine ", "CUU":"Leucine ",
@@ -24,17 +24,24 @@ user_input = sys.argv[1:]
 for filename in user_input:
         with open(filename, 'r') as myfile:
                 myLine = myfile.read()
-        l.append(myLine)
-dna = ''.join(l)
-dna = dna.upper()
-rnaSeq = dna.replace("T","U")
-#print("DNA sequences transcribed: %s" %rnaSeq)
+        l.append(str(myLine))
+dnaSeq = ''.join(l)
+dnaSeq = dnaSeq.upper()
+rnaSeq = dnaSeq.replace("T","U")
+#count = 0
+#rnaList = []
+#for i in range(len(rnaSeq)):
+#	if rnaSeq[count] != '\n':
+#		rnaList[count].append(rnaSeq(count))
+#count = count + 1
+#print (rnaList[0])
+print("DNA sequences transcribed: %s" %rnaSeq)
 #Converts the RNA sequence to amino acids.
 proteinSeq = ""
 for i in range(0, len(rnaSeq), 3):
 	if rnaSeq[i:i+3] in Codon2AA:
 		proteinSeq += Codon2AA[rnaSeq[i:i+3]]
-#print ("Protein Sequence: "+proteinSeq)
+print ("Protein Sequence: "+proteinSeq)
 print("The transcribed sequences to amino acids are located in the file named Protein_Sequence.")
 outFileName = "Protein_Sequence.txt"
 outFile = open(outFileName,'w')
