@@ -1,0 +1,6 @@
+In running my simulation, I found that my population, over a short number of generations, would hit its carrying capacity and stay there.
+This was likely due to the fact that I set a parameter for my simulation not to exceed carrying capacity.
+In a perfect world, a population will start from an initial number of individuals, experience growth in their population, and experience stabilization
+of said growth in and around their carrying capacity (with intermittent fluctuations above and below carrying capacity). The world, however, is not
+perfect. It gives rise to my curiosity regarding the logistics of running a simulation like this one and adding factors in like predation
+or competition.
