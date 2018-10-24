@@ -1,0 +1,6 @@
+In running this script multiple times, I noticed that no matter what the initial population size and carrying capacity were <br>
+the population would often max out at the carrying capacity within a relatively short amount of generations. <br>
+When one thinks about this, though, it is logical, because if each individual in the population produced, on average, <br>
+two offspring -which they do in this population- and then died, the population would be doubling after each generation. <br>
+Even with an initial population size of 5 and a carrying capacity of 10000, the population reaches the carrying capacity
+in about thirteen generations.
