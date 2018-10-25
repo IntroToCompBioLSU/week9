@@ -9,6 +9,9 @@ Popsize = int(input("Select the PopulationSize:   "))
 
 Gensize = int(input("Select the generationSize:   "))
 
+Carrycap = int(input("Select the carrying Capacuty:   "))
+
+
 #This will produce an array with average offspring 5 for some gen size
 for i in range (0, Gensize) 
 pop = nr.poisson(lam=5.0, size=Popsize)
