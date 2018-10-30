@@ -1,0 +1,20 @@
+<<Summary of week9 population simulation>>
+
+Trial 1 (popsim1):
+Starting population size: 5
+Number of Generations: 100
+Carrying capacity: 100
+Simulation ran and plotted a graph that plateus at 100.
+
+Trial 2 (popsim2):
+Starting population size: 100
+Number of Generations: 10
+Carrying capacity: 20
+First two times I ran simulation, I got an error (presumably because starting pop
+was more than the carrying capacity). Third time I ran it, I got the figure
+indicated above.
+
+Trial 3:
+I'm pretty sure I overwhelmed the simulation with really big numbers.
+I was curious what would happen, and it took forever to run through it.
+End result was my vmware freezing and restarting.
