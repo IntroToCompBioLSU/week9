@@ -1,0 +1,17 @@
+My first trial: The Starting population size was 28, the carrying capacity was 2000, and the number of generations was 40. The growth rate was 2.0 
+and strangely the population size passed the carrying capacity after the fifth generation, but didn't immediately die off. The future generations
+continously alternated between being over 2000 and under 1700. It seems somewhat realistic that after going over the carrying capacity, the next 
+generation(s) experienced a decrease in population size and then once food was replenished, the popualtion size grew again.
+
+Second trial: The Carrying capacity was 500, the growth rate was 1.0, my starting population was 18, and my number of generations was 100. The population 
+size rises exponentially and at the sixth generation the population size reaches the carrying capacity. The population size equals the carrying 
+capacity for the rest of the generations. Realistically, it is unlikely that a population would be able to stay at carrying capacity for that many
+generations if you consider outside variables such as disease affecting the population. 
+
+Third trial: The growth rate was 2.0, the carrying capacity was 100, the starting population was 14, and the number of generations was 90. Within 
+three generations the population size went above the carry capacity and fluctuated around the carrying capacity for the rest of the generations,
+similar to my first trial. 
+
+The fact that for each trial my population reached carrying capacity within a few generations and stayed there may be because I didn't set any 
+variables that would stop the population from exceeding carrying capacity. The trials that had 2.0 as the growth rate reached carrying capacity 
+sooner (this is expected).
