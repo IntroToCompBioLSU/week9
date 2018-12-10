@@ -46,3 +46,8 @@ print ("Your sequences are in a file called AAsequences.txt")
 outFileName = "AAsequences.txt"
 outFile = open(outFileName, 'w')
 outFile.write("%s \n" %amino)
+
+# DB: Overall, this looks good. I had originally intended that each input sequence would
+#     result in a different output AA sequence, but I realize the directions weren't clear
+#     about that. My only other comment is that you could add a few more specific comments
+#     throughout.
