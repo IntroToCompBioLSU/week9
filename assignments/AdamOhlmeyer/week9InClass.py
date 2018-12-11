@@ -55,3 +55,5 @@ print("Protein Sequence is stored in file: YourProteinSequence.txt ")
 outFileName  = "YourProteinSequence.txt"
 outFile = open(outFileName,'w')
 outFile.write("%s \n" %Protein)
+
+# DB: Good! You could add a few more in-line comments, but the script runs well.
