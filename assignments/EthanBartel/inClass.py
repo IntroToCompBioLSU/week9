@@ -18,7 +18,9 @@ aminoAcids = {"AAA":"Lysine ", "AAC":"Asparagine ", "AAG":"Lysine ", "AAU":"Aspa
 "UCA":"Serine ", "UCC":"Serine ", "UCG":"Serine ", "UCU":"Serine ", 
 "UGA":"Stop ", "UGC":"Cysteine ", "UGG":"Tryptophan ", "UGU":"Cysteine ", 
 "UUA":"Leucine ", "UUC":"Phenylalanine ", "UUG":"Leucine ", "UUU":"Phenylalanine "}
+
 import sys
+
 #Starting list for reading multiple files
 l = []
 user_args = sys.argv[1:]
@@ -29,12 +31,18 @@ for filename in user_args:
 dna = ''.join(l)
 dna = dna.upper()  
 rna = dna.replace("T","U")
+
 print("Your RNA sequence is: %s." %rna)
+
 protein = ""
 for n in range(0, len(rna), 3):
 	if rna[n:n+3] in aminoAcids:
 		protein += aminoAcids[rna[n:n+3]]
+
 print("Your Protein sequence is located in the file Protein.txt.")
+
 outFileName = "Protein.txt"
 outFile = open(outFileName,'w')
 outFile.write("%s \n" %protein)
+
+# DB: Good! Minor, but a few more comments would be helpful.
