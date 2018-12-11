@@ -4,3 +4,5 @@ In a perfect world, a population will start from an initial number of individual
 of said growth in and around their carrying capacity (with intermittent fluctuations above and below carrying capacity). The world, however, is not
 perfect. It gives rise to my curiosity regarding the logistics of running a simulation like this one and adding factors in like predation
 or competition.
+
+# DB: Good start, but I was hoping to hear a bit more about how the simulation results vary when you use different parameter values, etc.

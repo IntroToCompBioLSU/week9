@@ -11,24 +11,28 @@ carryingCapacity = int(input("Input carrying capacity: "))
 generationCount = int(input("Number of generations to run: "))
 
 # meanOffspring -- avg number of offpsing per each individual
-meanOffspring = 2
+meanOffspring = 2	# DB: Maybe allow the user to input this value as well?
 
 # for loop that runs through generations
 for i in range (0, generationCount):
 
-# show current population
+	# show current population
 	print(currentPopulation)
 
-#oldPopulationOffspring -- Poisson (mean: meanOffspring, size: current
-# population)
+	#oldPopulationOffspring -- Poisson (mean: meanOffspring, size: current
+	# population)
 	oldPopulationOffspring = np.random.poisson(meanOffspring, currentPopulation)
 
-# currentPopulation -- sum of all (will loop back around and add each new poisson)
+	# currentPopulation -- sum of all (will loop back around and add each new poisson)
 	currentPopulation = 0
 	for x in oldPopulationOffspring:
 		currentPopulation = currentPopulation + x
 
-# if statement for if --> currentPopulation > carryingCapacity
+	# if statement for if --> currentPopulation > carryingCapacity
 	if currentPopulation > carryingCapacity:
-	# spits out carrying capacity rather than a greater integer
+		# spits out carrying capacity rather than a greater integer
 		currentPopulation = carryingCapacity
+
+# DB: Overall, very good. I like the way you've structured the code. That's a very 
+#     efficient way to draw the offspring for the next generation while still allowing
+#     individual variation.
