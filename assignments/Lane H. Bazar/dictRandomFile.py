@@ -2,7 +2,7 @@
 
 #establish ability to read files.
 import sys
-with open(sys.argv[1], 'r') as f:
+with open(sys.argv[1], 'r') as f:	# DB: This will only read one file, not as many as the user provides.
     contents = f.read()
     contents = contents.strip()
 print (contents)
@@ -44,7 +44,7 @@ while True:
 
 #the user will be asked to enter the dna sequence.
 
-dnaSeq = (contents) 
+dnaSeq = (contents) 	# DB: This will only handle sequence on a single line in the input file.
 #dnaSeq = input ("Please input your DNA sequence: ")
 print("")
 
@@ -115,3 +115,6 @@ s = dnaSeqUpper
 codonSeq = (" ".join(s[i: i + 3] for i in range(0, len(s), 3)))
 codon = [dnaSeqUpper[i:i+3] for i in range(0, len(dnaSeqUpper), 3)]
 quit()
+
+# DB: You're headed in the right direction, but as is your script will only accept a single 
+#     file on the command line and only a single line of sequence in that file.
