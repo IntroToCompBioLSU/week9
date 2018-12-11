@@ -18,6 +18,7 @@ CodonAA = {"AAA":"Lysine ", "AAC":"Asparagine ", "AAG":"Lysine ", "AAU":"Asparag
 "UGA":"Stop ", "UGC":"Cysteine ", "UGG":"Tryptophan ", "UGU":"Cysteine ", 
 "UUA":"Leucine ", "UUC":"Phenylalanine ", "UUG":"Leucine ", "UUU":"Phenylalanine "}
 import sys
+
 #beginning list for reading more than one files
 l = []
 file_input = sys.argv[1:]
@@ -25,10 +26,11 @@ for filename in file_input:
 	with open(filename, 'r') as myfile:
 		myLine = myfile.read()
 	l.append(myLine)
-dnaSequence = ''.join(l)
+dnaSequence = ''.join(l)			# DB: Note that newline characters will still be present!
 dnaSequence = dnaSequence.upper()
 rnaSequence = dnaSequence.replace("T","U")
 print("DNA sequences transcribed: %s" %rnaSequence)
+
 #Convert RNA sequences to their respective amino acids
 proteinSequence = ""
 for i in range(0,len(rnaSequence), 3):
@@ -43,4 +45,6 @@ outFileName = "Prot_Seq.txt"
 outFile = open(outFileName,'w')
 outFile.write("%s \n" %proteinSequence)
 
-
+# DB: Really good, but newline characters will still be present in the concatenate DNA sequence
+#     and your script will then try to include them in translation. This will result in fewer
+#     amino acids than you expect. Maybe try stripping whitespace from strings before you concatenate.
