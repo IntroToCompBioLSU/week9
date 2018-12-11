@@ -24,7 +24,8 @@ def translate(sequence):
            "UGG" : "Trp", "CGG" : "Arg", "AGG" : "Arg", "GGG" : "Gly"
            }
 	protein_string = ""
-#Determine if sequence is divisible by 3
+	
+	#Determine if sequence is divisible by 3
 	for i in range(0, len(firstline)-(3+len(firstline)%3), 3):
 		if rna_codon[firstline[i:i+3]] == "STOP":
 			break
@@ -32,14 +33,14 @@ def translate(sequence):
 	return protein_string
 
 #sys for command line arguments
-FilesToRead = sys.argv
+FilesToRead = sys.argv	# DB: Do you use this at all?
 
 #reads the sequences in the files
 for seq in sys.argv[1:]:
 	print("The following amino acid sequences are from the file:")
 	print(seq)
 	infile = open(seq,'r')
-#translates the sequences in the files using new function
+	#translates the sequences in the files using new function
 	with open(seq) as f:
 		for firstline in f.readlines():
 			if firstline[0] == '>':
@@ -48,7 +49,7 @@ for seq in sys.argv[1:]:
 			else:
 				print(translate(firstline))
 				seq += (translate(firstline))
-#sends the amino acid seq to a new file
+			#sends the amino acid seq to a new file
 			amino = translate(firstline)
 			OutFileName = "AminoAcidSeq.txt"
 			outFile = open(OutFileName,'a')
@@ -56,3 +57,6 @@ for seq in sys.argv[1:]:
 
 print("The above amino acid sequences have been saved to the following file:")
 print("AminoAcidSeq.txt")
+
+# DB: Very good! Minor, but it's easiest to read if comments are indented to the same degree
+#     as the code they're referring to. Could probably use a few more comments.
