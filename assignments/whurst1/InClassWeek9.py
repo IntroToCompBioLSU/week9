@@ -7,7 +7,7 @@ for Filename in usrinputs:
 	with open (Filename, 'r') as carpeta:
 		TheLine = carpeta.read()
 	line.append(TheLine)
-DNA= ''.join(line)
+DNA= ''.join(line)			# DB: Note that newline characters are still present after you do this concatenation.
 DNA= DNA.upper()
 RNA= DNA.replace("T", "U")
 CodonTrans = {"AAA":"K", "AAC":"N", "AAG":"K", "AAU":"N",
@@ -31,6 +31,9 @@ for n in range(0, len(RNA), 3):
 	if RNA[n:n+3] in CodonTrans:
 		AASeq += CodonTrans[RNA[n:n+3]]
 print("AASeq is: %s and is saved to: AASeq_Archivo" %AASeq)
-AASeq_Archivo= "Nuevo Amino Acid Sequence Archivo."
+AASeq_Archivo= "Nuevo Amino Acid Sequence Archivo."		# DB: Avoid spaces in filenames
 outFile = open(AASeq_Archivo, 'w')
 outFile.write("%s" %AASeq)
+
+# DB: Overall, well done. However, when you concatenate the input sequences, it keeps newline
+#     characters, which then get in the way when you want to translate your sequence. 
