@@ -1,9 +1,12 @@
 #!/usr/bin/env python
+
 #import sys library
 import sys
+
 #define a new function to translate the sequence to aminoacids
 def translation(DNAseq):
-#Table of codons and their respective amino acids
+		
+		#Table of codons and their respective amino acids
         codontable = {
                 'ATA':'I', 'ATC':'I', 'ATT':'I', 'ATG':'M',
                 'ACA':'T', 'ACC':'T', 'ACG':'T', 'ACT':'T',
@@ -22,41 +25,57 @@ def translation(DNAseq):
                 'TAC':'Y', 'TAT':'Y', 'TAA':'_', 'TAG':'_',
                 'TGC':'C', 'TGT':'C', 'TGA':'_', 'TGG':'W',
                 }
-#variable to store the aminoacids
+		
+		#variable to store the aminoacids
         proteinsequence=''
-#define a codon and convert that an aminoacid using the table above
-        for n in range(0,len(Sequencelist),3):
+		
+		#define a codon and convert that an aminoacid using the table above
+        for n in range(0,len(Sequencelist),3):	# DB: It's best not to use global variable names (like Sequencelist) inside a function
                         proteinsequence += codontable[Sequencelist[n:n+3]]
-#return the output
+		
+		#return the output
         return(proteinsequence)
+
 #define filelist variable to capture all input  files
 Filelist=sys.argv[1:]
+
 #name and define  output file
 Outfilename='Aminoacidseq.txt'
 Outfile=open(Outfilename,'w')
+
 #use a counter to count file numbers that have been  modified by the code below
 Filenum=0
+
 #a for loop to open the files and  write the filename in the output file
 for filename in Filelist:
         Infile=open(filename,'r')
         Outfile.write(filename +'\n')
-#a for loop to modify line of sequence from the files and translate them
+		
+		#a for loop to modify line of sequence from the files and translate them
         for line in Infile:
                 Sequencelist=line.strip('\n')
                 Sequencelist=Sequencelist.upper()
                 Aminoacidseq=translation(Sequencelist)
-#write the aminoacid sequence to the output file
+				
+				#write the aminoacid sequence to the output file
                 Outfile.write(Aminoacidseq +'\n')
-#close the files
+		
+		#close the files
         Infile.close()
-#counter  to identify how many files were manipulated and print out the total
+		
+		#counter  to identify how many files were manipulated and print out the total
         Filenum +=1     
+
 print('number of files processed',Filenum)
 #close the output file
 Outfile.close()
 
 
-
+# DB: Looks really good. Two minor things: (1) I find it easiest to keep comments indented
+#     to the same level as the code they are referring to. Also, adding some spaces between
+#     lines can really improve readability. (2) I really like that you define a novel function
+#     but it's best not to refer to global variables (those defined in the main body of the
+#     script) from inside a function.
 
 
 
