@@ -22,6 +22,7 @@ Codon2AA = {"AAA":"Lysine ", "AAC":"Asparagine ", "AAG":"Lysine ", "AAU":"Aspara
 "UUA":"Leucine ", "UUC":"Phenylalanine ", "UUG":"Leucine ", "UUU":"Phenylalanine "}
 
 import sys
+
 # Starting list for reading multiple files of DNA sequences.
 l = []
 user_input = sys.argv[1:]
@@ -29,9 +30,10 @@ for filename in user_input:
         with open(filename, 'r') as myfile:
                 myLine = myfile.read()
         l.append(myLine)
-dnaSeq = ''.join(l)
+dnaSeq = ''.join(l)			# DB: Note that the newline characters are still there!
 dnaSeq = dnaSeq.upper()
 rnaSeq = dnaSeq.replace("T","U")
+
 # Prints RNA sequences.
 print("DNA sequences transcribed: %s" %rnaSeq)
 
@@ -40,13 +42,18 @@ proteinSeq = ""
 for i in range(0, len(rnaSeq), 3):
 	if rnaSeq[i:i+3] in Codon2AA:
 		proteinSeq += Codon2AA[rnaSeq[i:i+3]]
+
 # Prints Protein Sequences.
 print ("Protein Sequence: "+proteinSeq)
+
 # Tells user where the Protein Sequences are located.
 print("The transcribed sequences to amino acids are located in the file named Protein_Sequence.")
+
 # Makes a file and adds the Protein Sequences inside.
 outFileName = "Protein_Sequence.txt"
 outFile = open(outFileName,'w')
 outFile.write("%s \n" %proteinSeq)
 
-
+# DB: Overall, really good. The only problem is that you've concatenated strings of dna
+#     sequence that are interspersed with newline characters. So your script will try to 
+#     do the translation with the newlines as well.
