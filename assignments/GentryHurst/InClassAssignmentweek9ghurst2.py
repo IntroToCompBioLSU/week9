@@ -59,4 +59,6 @@ print("The above amino acid sequences have been saved to the following file:")
 print("AminoAcidSeq.txt")
 
 # DB: Very good! Minor, but it's easiest to read if comments are indented to the same degree
-#     as the code they're referring to. Could probably use a few more comments.
+#     as the code they're referring to. Could probably use a few more comments. Also, the script
+#     seems to truncate each sequence by one amino acid. Perhaps it's not properly dealing with 
+#     newline characters?
