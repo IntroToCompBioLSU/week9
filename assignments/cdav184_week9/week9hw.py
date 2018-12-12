@@ -29,6 +29,10 @@ num = [initialPop]*(numberGen+1)
 for i in range(numberGen):
     num[i+1] = num[i] + numberOff*num[i] * (1 - num[i]/carryingCap)
 
+# DB: I had been envisioning an individual-level simulation, where the number of offspring
+#     was drawn independently from a Poisson for each individual. But using the analytical
+#     equation should produce a similar result, albeit with less variation.
+
 # simulation data plotted by using pyplot
 plt.plot(range(numberGen+1), num, color='green')
 # labeling the x and y axis & formatting the plot
@@ -39,3 +43,6 @@ txt=("Growth Rate: %s, Carrying Capacity: %d" % (numberOff,carryingCap))
 plt.figtext(0.5, 0.005, txt, wrap=True, horizontalalignment='center', fontsize=8, color='green')
 plt.axvline(numpy.argmax(numpy.diff(num)), color = 'k' )
 plt.show()
+
+# DB: Overall, looks good! But did you include a short writeup describing the results of 
+#     using different parameter values?
