@@ -18,7 +18,7 @@ carryingCapacity = int(input("Population carrying capacity: "))
 generationCount = int(input("Number of generations: "))
 
 #est. variable for  mean/average offspring per individuals per generation
-meanOffspring = 1
+meanOffspring = 2	# DB: Might set this higher than 1. Otherwise, population unlikely to grow.
 
 # loop generation count times
 for i in range(0, generationCount):
@@ -32,11 +32,14 @@ for i in range(0, generationCount):
 	# currentPop <- sum of all currentPopOffspring
 	currentPopulation = 0
 	for j in oldPopulationOffspring:
-	#for each item in oldPopulationOffspring, set j to the item
+		
+		#for each item in oldPopulationOffspring, set j to the item
 		currentPopulation = currentPopulation + j
 	
 	# if currentPopulation > carryingCapacity
 	if currentPopulation > carryingCapacity:
 
-	# currentPop <- carryingCapacity
+		# currentPop <- carryingCapacity
 		currentPopulation = carryingCapacity
+
+# DB: Overall, this looks really good!
