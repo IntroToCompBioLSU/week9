@@ -47,3 +47,15 @@ plt.xlabel('Generations')
 plt.ylabel('number of individuals')
 plt.plot(range(int(attempt)+1),n)
 plt.show()
+
+# DB: It looks like you're on the right track, but I' a little confused by what 'attempt'
+#     and 'offspring' are intended to represent. I see how n is populated inside the while
+#     loop, but what happens with the for loop? It seems like once the while loop has run 
+#     once, attempt will always be greater than int(generations), so the rest of the iterations
+#     of the for loop wouldn't really do anything.
+
+#     In the end, the result looks reasonable, though. I had been envisioning an individual-level 
+#     simulation, where the number of offspring was drawn independently from a Poisson for 
+#     each individual. But using the analytical equation should produce a similar result, albeit 
+#     with less variation from generation to generation and more variation across runs. The single 
+#     value of r drawn above will have a large influence on the results.

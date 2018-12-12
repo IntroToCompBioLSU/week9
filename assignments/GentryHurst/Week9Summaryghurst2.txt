@@ -2,5 +2,4 @@ If the max generation value is small, the carrying capacity is reached very fast
 Also, if the carrying capacity is large and the number of generations is large the population reaches the carrying capacity fast and then it stays around the carrying capacity for the rest of the generations.
 I also noticed that when the starting population is larger than the carrying capacity, the populations decreases fast with out every increasing again.
 
-
- 
+# DB: Overall, this looks good. But if the max generation value is small, is the carrying capacity ever reached?
