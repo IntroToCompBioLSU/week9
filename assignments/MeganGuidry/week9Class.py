@@ -48,3 +48,5 @@ outFile = open(outFileName, 'w')
 outFile.write("%s \n" %aaSeq)
 print("Amino acid sequence send to aminoAcidSeq.txt")
 
+# DB: Looks good! A few more specific comments wouldn't hurt, but that's pretty much
+#     always true.
