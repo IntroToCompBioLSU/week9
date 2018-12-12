@@ -7,3 +7,4 @@ Otherwise, similar patterns arose even when the user altered the initial populat
 carrying capacity, and the number of generations, just different numbers were printed and different 
 numbers of numbers were printed. 
 
+# DB: Very good!

@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python
 
 #this script simulates population growth of a population
@@ -35,6 +34,7 @@ for i in range (0,  gencount):
 	if currentpop > carryingcap:
 		currentpop = carryingcap
 
+# DB: Looks really good!
 
 #}
 
