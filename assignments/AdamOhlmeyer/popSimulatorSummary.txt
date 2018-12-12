@@ -4,3 +4,5 @@ When one thinks about this, though, it is logical, because if each individual in
 two offspring -which they do in this population- and then died, the population would be doubling after each generation. <br>
 Even with an initial population size of 5 and a carrying capacity of 10000, the population reaches the carrying capacity
 in about thirteen generations.
+
+# DB: Good!

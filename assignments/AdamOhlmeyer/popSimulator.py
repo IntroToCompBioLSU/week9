@@ -17,15 +17,19 @@ meanOffspring = 2
 # loop generationCount times
 for i in range (0, generationCount): 
 #{
-# showcurrentPopulation
+	# showcurrentPopulation
 	print (currentPopulation)
- #oldPopulationOffspring <- Poisson(mean:meanOffspring, size: currentPopulation)
+	
+	 #oldPopulationOffspring <- Poisson(mean:meanOffspring, size: currentPopulation)
 	oldPopulationOffspring = np.random.poisson(meanOffspring, currentPopulation)
-# currentPopulation <- sum of all oldPopulationOffspring
+	
+	# currentPopulation <- sum of all oldPopulationOffspring
 	currentPopulation = 0
 	for j in oldPopulationOffspring:
 		currentPopulation = currentPopulation + j
-#if currentPopulation > carryingCapacity
+	# DB: You could also replace this loop with: currentPopulation = sum(oldPopulationOffspring)
+	
+	#if currentPopulation > carryingCapacity
 	if currentPopulation > carryingCapacity:
 		currentPopulation=carryingCapacity 
 #{
@@ -35,3 +39,5 @@ for i in range (0, generationCount):
 #currentPopulation <- nextPopulation
 #}
 #}
+
+# DB: Overall, this looks really good!
