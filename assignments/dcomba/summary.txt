@@ -1,0 +1,9 @@
+With the population growth simulator, I noticed a few key things. When the mean number of offspring 
+(set by me as the author of the script, not the user), is above 1, the generational population sizes 
+continue to increase until they plateau at the user- defined carrying capacity. When the mean number 
+of offspring was set to be less than 1, the population sizes shrunk before dying out. The patterns 
+that occurred really only changed when the mean number of offspring was changed in the script. 
+Otherwise, similar patterns arose even when the user altered the initial population size, the 
+carrying capacity, and the number of generations, just different numbers were printed and different 
+numbers of numbers were printed. 
+
