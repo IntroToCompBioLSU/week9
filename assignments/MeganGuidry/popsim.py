@@ -5,7 +5,7 @@ import numpy.random as nr
 import matplotlib.pyplot as plt
 
 # assigning variables based on logistic growth formula
-r = nr.poisson()
+r = nr.poisson()	# DB: Might use a lambda greater than 1. As is, the growth rate will often be 0.
 p = input("Starting population size: ")
 t = input("Number of generations: ")
 K = input("Carrying capacity: ")
@@ -24,6 +24,12 @@ num = [p]*(t+1)
 for i in range(t):
     num[i+1] = num[i] + r*num[i] * (1 - num[i]/K)
 
+# DB: I had been envisioning an individual-level simulation, where the number of offspring
+#     was drawn independently from a Poisson for each individual. But using the analytical
+#     equation should produce a similar result, albeit with less variation from generation to
+#     generation and more variation across runs. The single value of r drawn above will have
+#     a large influence on the results.
+
 # plot results of population simulation using pyplot
 plt.plot(range(t+1), num, color='purple')
 # labeling axes & formatting
@@ -35,6 +41,4 @@ plt.figtext(0.5, 0.005, txt, wrap=True, horizontalalignment='center', fontsize=8
 plt.axvline(numpy.argmax(numpy.diff(num)), color = 'k' )
 plt.show()
 
-
-
-
+# DB: Overall, looks pretty good.
