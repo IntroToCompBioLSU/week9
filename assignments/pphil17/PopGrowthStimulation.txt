@@ -15,3 +15,5 @@ similar to my first trial.
 The fact that for each trial my population reached carrying capacity within a few generations and stayed there may be because I didn't set any 
 variables that would stop the population from exceeding carrying capacity. The trials that had 2.0 as the growth rate reached carrying capacity 
 sooner (this is expected).
+
+# DB: Very good! 

@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python	# DB: More robust to use /usr/bin/env python. 
 
 import numpy
 import numpy.random as nr
@@ -9,6 +9,7 @@ r = nr.poisson(1)
 k = input("Carrying Capacity: ")
 t = input("Set number of generations: ")
 p = input("Starting population size: ")
+
 t = int(t)
 p = int(p)
 k = int(k)
@@ -29,3 +30,9 @@ plt.ylabel("Population Size")
 plt.title("Growth rate: %s, Carrying Capacity = %d" % (r, k))
 plt.axvline(numpy.argmax(numpy.diff(num)),  color = "k" )
 plt.show()
+
+# DB: Overall, this looks pretty good. I had been envisioning an individual-level 
+#     simulation, where the number of offspring was drawn independently from a Poisson for 
+#     each individual. But using the analytical equation should produce a similar result, albeit 
+#     with less variation from generation to generation and more variation across runs. The single 
+#     value of r drawn above will have a large influence on the results.
