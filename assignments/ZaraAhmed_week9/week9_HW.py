@@ -24,13 +24,18 @@ numGen = int(numGen) # Number of generations.
 carCap = int(carCap) # Carrying capacity.
 
 # Set number of individuals in starting population.
-num = [startPop]*(numGen+1)
+num = [startPop]*(numGen+1)		# DB: Clever! I like this approach.
 
 # Logistic growth formula.
 # Use for loop with Number of generations.
 # Add population change to starting population variable.
 for i in range(numGen):
     num[i+1] = num[i] + numOff*num[i] * (1 - num[i]/carCap)
+    
+# DB: I had been envisioning an individual-level simulation, where the number of offspring
+#     was drawn independently from a Poisson for each individual. But using the analytical
+#     equation should produce a similar result, albeit with less variation.
+
 
 # All simulation data plotted using pyplot.
 plt.plot(range(numGen+1), num, color='red')
